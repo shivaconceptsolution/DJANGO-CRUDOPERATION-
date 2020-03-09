@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="calclogic" method="post">
+{% csrf_token %}
+<input type="text" name="txtnum1" placeholder="Enter first number" value="{{key1}}" />
+<br>
+<br>
+<input type="text" name="txtnum2" placeholder="Enter Second Number" value="{{key2}}" />
+<br>
+<br>
+<input type="submit" name="btnsubmit" value="+" />
+<input type="submit" name="btnsubmit" value="-" />
+<input type="submit" name="btnsubmit" value="*" />
+<input type="submit" name="btnsubmit" value="/" />
+
+
+</form>
+{{key}}
+</body>
+</html>

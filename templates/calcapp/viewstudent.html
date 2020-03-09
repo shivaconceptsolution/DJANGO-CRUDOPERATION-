@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+<table border="1">
+	<tr><th>RNO</th><th>NAME</th><th>BRANCH</th><th>FEES</th></tr>
+	{% for item in res   %}
+
+    <tr><td>{{item.rno}}</td><td>{{item.sname}}</td><td>{{item.branch}}</td><td>{{item.fees}}</td><td><a href="findstudent?q={{item.id}}"><img src="/static/img/delete.png" width="30" height="30"></a>||<a href="deletestudent?q={{item.id}}"><img src="/static/img/edit.png" width="30" height="30"></a></td></tr>
+
+	{% endfor %}
+    <form action="studentinfo" method="post">
+    {% csrf_token %}
+     <tr><td><input type="text" name="txtrno" />{{q}}</td><td><input type="text" name="txtname" /></td><td><input type="text" name="txtbranch" /></td><td><input type="text" name="txtfees" /></td><td><input type="submit" name="btnsubmit" value="Insert" /></td></tr>
+    </form>
+
+</table>
+
+</center>
+</body>
+</html>

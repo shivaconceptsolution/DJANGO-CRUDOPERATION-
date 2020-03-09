@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.row
+		{
+           width:500px;
+           height: 30px;
+
+		}
+		.col
+		{
+			float:left;
+			width: 45%;
+			
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+
+
+	</style>
+</head>
+<body>
+<h1>Course Information Form</h1>
+
+<form action="" method="post">
+{% csrf_token %}
+<div class="row">
+<div class="col">
+Enter name
+</div>
+<div class="col">
+<input type="text" name="txtname" />
+</div>
+</div>
+<div class="row">
+<div class="col">
+Enter Date
+</div>
+<div class="col">
+<input type="date" name="txtdate" />
+</div>
+</div>
+<div class="row">
+<div class="col">
+Enter Fees
+</div>
+<div class="col">
+<input type="number" name="txtfees" />
+</div>
+</div>
+<div class="row">
+<div class="col">
+Select Basic Course
+</div>
+<div class="col">
+<input type="checkbox" name="c[]" value="C">C
+<input type="checkbox" name="c[]" value="CPP">CPP
+<input type="checkbox" name="c[]" value="DS">DS
+</div>
+</div>
+<div class="row">
+<div class="col">
+Select Advance Course
+</div>
+<div class="col">
+<input type="radio" name="adcourse" value="JAVA">JAVA
+<input type="radio" name="adcourse" value=".NET">.NET
+<input type="radio" name="adcourse" value="PHP">PHP
+<input type="radio" name="adcourse" value="PYTHON">PYTHON
+</div>
+</div>
+ <div class="row">
+<div class="col">
+	Country:-
+</div>
+<div class="col">
+<select name="country">
+	<option value="">Select Country</option>
+	<option value="IND">INDIA</option>
+	<option value="USA">USA</option>
+	<option value="JAPAN">JP</option>
+	<option value="Canada">CN</option>
+
+
+</select>
+
+</div>
+</div>
+<div style="clear:left"></div>
+<div class="row">
+	<div class="col">
+     State:-
+    </div>
+<div class="col">
+<select name="state[]" multiple="true">
+	<option value="">Select State</option>
+	<option value="MP">MP</option>
+	<option value="UP">UP</option>
+	<option value="AP">AP</option>
+	<option value="HP">HP</option>
+
+
+</select>
+</div>
+</div>
+<div style="clear:left"></div>
+<div class="row">
+<div class="col">
+Enter any query
+</div>
+<div class="col">
+<textarea rows="10" cols="50" name="query">
+	
+</textarea>
+</div>
+</div>
+<div class="row">
+	<div class="col">
+
+	</div>
+<div class="col">
+<input type="submit" name="btnsubmit" value="Click" />
+
+</div>
+</div>
+</form>	
+
+<br>
+<br>
+<div style="clear:left">
+</div>
+<div class="row">
+
+
+{% if msg  %}
+
+{% for item in msg  %}
+
+<p>{{ item }}</p>
+{% endfor %}
+{%  endif %}
+
+</div>
+</body>
+</html>

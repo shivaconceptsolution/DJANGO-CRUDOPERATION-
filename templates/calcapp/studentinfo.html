@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Add Student Record </h1>
+<hr>	
+<form action="" method="post">
+{% csrf_token %}
+<table>
+
+<tr><td>Enter rno</td><td><input type="text" name="txtrno" required="" /></td></tr>
+<tr><td>Enter name</td><td><input type="text" name="txtname" required="" /></td></tr>
+<tr><td>Enter branch</td><td><input type="text" name="txtbranch" required="" /></td></tr>
+<tr><td>Enter fees</td><td><input type="text" name="txtfees" required="" /></td></tr>
+<tr><td></td><td><input type="submit" name="btnsubmit" value="Insert" /></td></tr>
+{{msg}}
+</table>	
+
+
+</form>
+{{msg}}
+
+<br>
+
+<a href="viewstudent">View all Student Record </a>
+</body>
+</html>
